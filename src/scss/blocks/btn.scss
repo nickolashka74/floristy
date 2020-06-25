@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    padding: 19px 30px 16px;
+    border: 1px solid $main-color;
+    color: $main-color;
+    background-color: transparent;
+    @include adaptiv-font (12, 10);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all .5s;
+
+    &:hover {
+        color: $black;
+        background-color: $main-color;
+    }
+}

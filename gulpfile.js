@@ -143,7 +143,7 @@ gulp.task('svgSprite', function () {
 			mode: {
 				stack: {
 					sprite: "../icons/icons.svg",  //sprite file name
-					example: true
+					example: false
 				}
 			},
 		}
@@ -159,7 +159,7 @@ function fontsStyle(params) {
 			if (items) {
 				let c_fontname;
 				for (var i = 0; i < items.length; i++) {
-					let fontname = items[i].split('-');
+					let fontname = items[i].split('.');
 					fontname = fontname[0];
 					if (c_fontname != fontname) {
 						fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);

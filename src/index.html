@@ -4,13 +4,46 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/style.min.css">
-		<title>Gulp</title>
+		<title>Floristy</title>
 	</head>
 	<body>
-		@@include('html/_header.html')
-		<main class="main">
+		<div class="container">
+			<section class="main">
+				@@include('html/_header.html')
+	
+				<div class="main__wrapper">
+					<h1 class="main__title">флористика с душой</h1>
+					<a href="#" class="btn main__btn">
+						смотреть работы
+					</a>
+					<div class="socials main__socials">
+						<a href="#" class="socials__item">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#fb"/>
+							</svg>
+						</a>
+						<a href="#" class="socials__item">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#whatsapp"/>
+							</svg>
+						</a>
+						<a href="#" class="socials__item">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#vk"/>
+							</svg>
+						</a>
+						<a href="#" class="socials__item">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#inst"/>
+							</svg>
+						</a>
+					</div>
+					<div class="main__element"></div>
+					<a href="#" class="main__link">смотреть каталог</a>
+				</div>
+			</section>
+		</div>
 
-		</main>
 		<script src="js/script.min.js"></script>
 	</body>
 </html>

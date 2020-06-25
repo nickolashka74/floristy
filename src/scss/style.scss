@@ -1,4 +1,20 @@
 @import "variable";
 @import "mixins";
-@import "normolize";
+@import "normalize";
 @import "fonts";
+
+body {
+    font-family: Forum, sans-serif;
+    font-weight: 400;
+    color: $main-color;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+//Blocks
+@import "blocks/main";
+@import "blocks/btn";
+@import "blocks/socials";

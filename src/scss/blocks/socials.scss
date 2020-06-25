@@ -1,0 +1,17 @@
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 170px;
+
+    &__item {
+        flex-basis: 25px;
+        display: inline-block;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
