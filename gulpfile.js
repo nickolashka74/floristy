@@ -137,19 +137,44 @@ gulp.task('otf2ttf', function () {
 		.pipe(dest(source_folder + '/fonts/'));
 })
 
-gulp.task('svgSprite', function () {
-	return gulp.src([source_folder + '/iconsprite/*.svg'])
+// function svg () {
+// 	return src([source_folder + '/iconsprite/*.svg'])
+// 		.pipe(svgSprite({
+// 			mode: {
+// 				stack: {
+// 					sprite: "../icons/icons.svg",  //sprite file name
+// 					example: false,
+// 				}
+// 			},
+// 		}
+// 		))
+// 		.pipe(dest(path.build.img))
+// };
+
+function svg () {
+	return src([source_folder + '/iconsprite/*.svg'])
 		.pipe(svgSprite({
 			mode: {
-				stack: {
-					sprite: "../icons/icons.svg",  //sprite file name
-					example: false
+				symbol: {
+					dest: '.'
+				  , sprite: 'symbol.svg'
+				  , prefix: ''
+				  , dimensions: '.'
+				  , bust: false
+				  //, render: {styl: true}
 				}
 			},
+			svg: {                             // General options for created SVG files
+				xmlDeclaration: false,                     // Add XML declaration to SVG sprite
+				doctypeDeclaration: false,                     // Add DOCTYPE declaration to SVG sprite
+				namespaceIDs: false,                     // Add namespace token to all IDs in SVG shapes
+				dimensionAttributes: false                      // Width and height attributes on the sprite
+			},
+			selector: ''
 		}
 		))
 		.pipe(dest(path.build.img))
-})
+};
 
 function fontsStyle(params) {
 	let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
@@ -186,12 +211,13 @@ function clean(params) {
 	return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, svg, fonts), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
+exports.svg = svg;
 exports.js = js;
 exports.css = css;
 exports.html = html;

@@ -14,6 +14,11 @@ body {
     margin: 0 auto;
 }
 
+.cfill {
+    fill: red;
+    stroke: red;
+}
+
 //Blocks
 @import "blocks/main";
 @import "blocks/btn";
