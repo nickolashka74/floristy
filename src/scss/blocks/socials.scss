@@ -6,12 +6,85 @@
     height: 170px;
 
     &__item {
-        flex-basis: 25px;
-        display: inline-block;
+        display: block;
+        width: 25px;
+        height: 25px;
 
-        svg {
+        &:hover {
+            .socials__icon {
+                fill: $black;
+
+                &--inst {
+                    stroke: $black;
+                }
+
+                &--union {
+                    fill: #FFF;
+                }
+            }
+
+            .socials__border {
+                background-color: $main-color;
+
+                &--round{
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    &__border {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #FFF;
+        border-radius: 4px;
+        background-color: transparent;
+        transition: background-color .5s;
+
+        &--round {
+            border: none;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        fill: $main-color;
+        transition: fill .5s;
+
+        &--inst {
+            width: 14px;
+            height: 14px;
+            stroke: $main-color;
+            top: 3px;
+            right: 3px;
+            transform: none;
+            transition: stroke .5s;
+        }
+
+        &--fb {
+            width: 7px;
+            height: 15px;
+        }
+
+        &--whatsapp {
+            width: 13px;
+            height: 13px;
+            z-index: 1;
+        }
+
+        &--vk {
+            width: 15px;
+            height: 9px;
+        }
+
+        &--union {
             width: 25px;
             height: 25px;
+            fill: none;
         }
     }
 }

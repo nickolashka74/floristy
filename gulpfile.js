@@ -137,40 +137,18 @@ gulp.task('otf2ttf', function () {
 		.pipe(dest(source_folder + '/fonts/'));
 })
 
-// function svg () {
-// 	return src([source_folder + '/iconsprite/*.svg'])
-// 		.pipe(svgSprite({
-// 			mode: {
-// 				stack: {
-// 					sprite: "../icons/icons.svg",  //sprite file name
-// 					example: false,
-// 				}
-// 			},
-// 		}
-// 		))
-// 		.pipe(dest(path.build.img))
-// };
-
 function svg () {
 	return src([source_folder + '/iconsprite/*.svg'])
 		.pipe(svgSprite({
 			mode: {
-				symbol: {
-					dest: '.'
-				  , sprite: 'symbol.svg'
-				  , prefix: ''
-				  , dimensions: '.'
-				  , bust: false
-				  //, render: {styl: true}
+				stack: {
+					sprite: "../icons/icons.svg",  //sprite file name
+					example: false,
 				}
 			},
-			svg: {                             // General options for created SVG files
-				xmlDeclaration: false,                     // Add XML declaration to SVG sprite
-				doctypeDeclaration: false,                     // Add DOCTYPE declaration to SVG sprite
-				namespaceIDs: false,                     // Add namespace token to all IDs in SVG shapes
-				dimensionAttributes: false                      // Width and height attributes on the sprite
+			svg: {
+				namespaceClassnames: false
 			},
-			selector: ''
 		}
 		))
 		.pipe(dest(path.build.img))

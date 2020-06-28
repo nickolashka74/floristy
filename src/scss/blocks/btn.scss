@@ -1,6 +1,6 @@
 .btn {
     display: inline-block;
-    padding: 19px 30px 16px;
+    padding: 19px 34px 16px;
     border: 1px solid $main-color;
     color: $main-color;
     background-color: transparent;
@@ -12,5 +12,10 @@
     &:hover {
         color: $black;
         background-color: $main-color;
+    }
+
+    &--item {
+        color: #010001;
+        background-color: #fff;
     }
 }

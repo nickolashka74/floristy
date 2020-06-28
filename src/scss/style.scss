@@ -12,14 +12,16 @@ body {
 .container {
     max-width: 1920px;
     margin: 0 auto;
-}
-
-.cfill {
-    fill: red;
-    stroke: red;
+    background-color: $main-bg;
 }
 
 //Blocks
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/hamburger";
 @import "blocks/main";
 @import "blocks/btn";
 @import "blocks/socials";
+@import "blocks/catalog";
+@import "blocks/title";
+@import "blocks/item";

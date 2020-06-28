@@ -1,0 +1,106 @@
+.item {
+    flex: 0 1 350px;
+    min-height: 470px;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border-color .5s;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+
+        .item__content {
+            &::before {
+                top: 0;
+            }
+        }
+
+        .item__header {
+            transform: rotateY(-180deg);
+        }
+
+        .item__footer {
+            bottom: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        padding: 36px 20px 15px;
+        min-height: 450px;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: rgba(0, 0, 0, 0.6);
+            transition: top .5s;
+        }
+    }
+
+    &__header {
+        position: relative;
+        width: 100px;
+        height: 22px;
+        font-size: 20px;
+        transition: all .5s ease 0s;
+        transform-style: preserve-3d;
+
+        &--front,
+        &--back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+
+            &::after {
+                position: absolute;
+                bottom: 4px;
+                display: block;
+                width: 70px;
+                height: 1px;
+                content: '';
+                background-color: #fff;
+            }
+        }
+
+        &--front {
+            z-index: 2;
+            transform: rotateY(0deg);
+
+            &::after {
+                left: 30px;
+            }
+        }
+
+        &--back {
+            transform: rotateY(-180deg);
+
+            &::after {
+                right: 30px;
+            }
+        }
+    }
+
+    &__footer {
+        position: relative;
+        bottom: -75px;
+        transition: bottom .5s;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba($color: #fff, $alpha: .9);
+    }
+}

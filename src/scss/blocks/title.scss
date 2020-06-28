@@ -1,0 +1,20 @@
+.title {
+    position: relative;
+    padding-bottom: 22px;
+    font-size: 30px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    &::after {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        display: block;
+        margin-top: 22px;
+        width: 85px;
+        height: 2px;
+        content: '';
+        background-color: #fff;
+        transform: translateX(-50%);
+    }
+}

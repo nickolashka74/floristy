@@ -1,0 +1,25 @@
+.catalog {
+    padding: 170px 40px 85px;
+
+    &__title {
+        padding-bottom: 22px;
+        text-align: center;
+    }
+
+    &__subtitle {
+        margin-top: -40px;
+        font-size: 220px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgba(255, 255, 255, .03);
+    }
+
+    &__list {
+        max-width: 1560px;
+        margin: -115px auto 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
