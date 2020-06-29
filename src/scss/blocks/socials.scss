@@ -19,12 +19,12 @@
                 }
 
                 &--union {
-                    fill: #FFF;
+                    fill: $white;
                 }
             }
 
             .socials__border {
-                background-color: $main-color;
+                background-color: $white;
 
                 &--round{
                     background-color: transparent;
@@ -37,7 +37,7 @@
         position: relative;
         width: 25px;
         height: 25px;
-        border: 1px solid #FFF;
+        border: 1px solid $white;
         border-radius: 4px;
         background-color: transparent;
         transition: background-color .5s;
@@ -52,13 +52,13 @@
         top: 50%;
         right: 50%;
         transform: translate(50%, -50%);
-        fill: $main-color;
+        fill: $white;
         transition: fill .5s;
 
         &--inst {
             width: 14px;
             height: 14px;
-            stroke: $main-color;
+            stroke: $white;
             top: 3px;
             right: 3px;
             transform: none;

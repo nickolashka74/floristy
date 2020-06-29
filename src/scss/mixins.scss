@@ -8,8 +8,23 @@
 	}
 }
 
+/* адаптивный font size от 320px до бесконечности */
 @mixin adaptiv-font($pcSize, $mobSize) {
 	$addSize: $pcSize - $mobSize;
 	$maxWidth: $maxWidth - 320;
     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+/* адаптивный font-size от 320px до max-width */
+@mixin adaptiv($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$minWidth: $maxWidth + 1;
+	$width: $maxWidth - 320;
+	@media (max-width: #{$maxWidth}px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$width}));
+	}
+
+	@media (min-width: #{$minWidth}px) {
+		font-size: #{$pcSize}px;
+	}
 }

@@ -17,37 +17,7 @@
 						смотреть работы
 					</a>
 					<div class="socials main__socials">
-						<a href="#" class="socials__item">
-							<div class="socials__border">
-								<svg class="socials__icon socials__icon--inst">
-									<use xlink:href="img/icons/icons.svg#inst"/>
-								</svg>
-							</div>
-						</a>
-						<a href="#" class="socials__item">
-							<div class="socials__border">
-								<svg class="socials__icon socials__icon--fb">
-									<use xlink:href="img/icons/icons.svg#fb"/>
-								</svg>
-							</div>
-						</a>
-						<a href="#" class="socials__item">
-							<div class="socials__border socials__border--round">
-								<svg class="socials__icon socials__icon--whatsapp">
-									<use xlink:href="img/icons/icons.svg#whatsapp"/>
-								</svg>
-								<svg class="socials__icon socials__icon--union">
-									<use xlink:href="img/icons/icons.svg#union"/>
-								</svg>
-							</div>
-						</a>
-						<a href="#" class="socials__item">
-							<div class="socials__border">
-								<svg class="socials__icon socials__icon--vk">
-									<use xlink:href="img/icons/icons.svg#vk"/>
-								</svg>
-							</div>
-						</a>
+						@@include('html/_socials.html')
 					</div>
 					<div class="main__element"></div>
 					<a href="#" class="main__link">смотреть каталог</a>
@@ -58,20 +28,43 @@
 				<h2 class="title catalog__title">Каталог услуг</h2>
 				<div class="catalog__subtitle">каталог услуг</div>
 				<div class="catalog__list">
-					<div class="item catalog__item">
-						<div class="item__content" style="background: url('../img/catalog/item-1.jpg') center center / cover no-repeat">
-							<div class="item__header">
-								<div class="item__header--front">01</div>
-								<div class="item__header--back">01</div>
-							</div>
-							<div class="item__footer">
-								<h3 class="item__title">букет невесты и свадебное оформление</h3>
-								<a href="#" class="btn btn--item">смотреть работы</a>
-							</div>
-						</div>
+					@@include('html/_item.html', {
+						"url": "../img/catalog/item-1.jpg",
+						"number": "01",
+						"title": "букет невесты и свадебное оформление"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/item-2.jpg",
+						"number": "02",
+						"title": "букеты на торжества"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/item-3.jpg",
+						"number": "03",
+						"title": "композиции"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/item-4.jpg",
+						"number": "04",
+						"title": "оформление мероприятий"
+					})
+				</div>
+			</section>
+
+			<section class="promo">
+				<div class="promo__wrapper">
+					<div class="promo__content">
+						<h2 class="title title--promo">акционные предложения</h2>
+						<p class="promo__descr">При заказе свадебного оформления предоставляется скидка на букет невесты и бутоньерку в размере 30%</p>
+						<button class="promo__btn">заказать оформление</button>
+					</div>
+					<div class="promo__image">
+						<img src="img/promo/promo.jpg" alt="promo">
 					</div>
 				</div>
 			</section>
+
+			@@include('html/_footer.html')
 		</div>
 
 		<script src="js/script.min.js"></script>
