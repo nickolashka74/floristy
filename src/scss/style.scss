@@ -15,6 +15,9 @@ body {
     background-color: $main-bg;
 }
 
+//Libs
+@import "blocks/slick.scss";
+
 //Blocks
 @import "blocks/header";
 @import "blocks/logo";
