@@ -1,5 +1,4 @@
 .item {
-    flex: 0 0 350px;
     max-width: 350px;
     min-height: 470px;
     padding: 10px;
@@ -94,6 +93,7 @@
         position: relative;
         bottom: -75px;
         transition: bottom .5s;
+        text-align: left;
     }
 
     &__title {

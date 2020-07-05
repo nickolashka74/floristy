@@ -41,6 +41,7 @@ let { src, dest } = require('gulp'),
 	uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
 	svgSprite = require('gulp-svg-sprite'),
+	symbol = require('gulp-svg-sprite'),
 	ttf2woff = require('gulp-ttf2woff'),
 	ttf2woff2 = require('gulp-ttf2woff2'),
 	fonter = require('gulp-fonter');
@@ -74,6 +75,7 @@ function css() {
 		)
 		.pipe(
 			autoprefixer({
+				gride: true,
 				overrideBrowserslist: ["last 5 versions"],
 				cascade: true
 			})
@@ -137,8 +139,21 @@ gulp.task('otf2ttf', function () {
 		.pipe(dest(source_folder + '/fonts/'));
 })
 
+gulp.task('symbol', function () {
+	return gulp.src([source_folder + '/icons/symbols/*.svg'])
+		.pipe(symbol({
+			mode: {
+				symbol: {
+					sprite: "../../../src/sprite.svg"
+				}
+			}
+		}
+		))
+		.pipe(dest(path.build.img))
+})
+
 function svg () {
-	return src([source_folder + '/iconsprite/*.svg'])
+	return src([source_folder + '/icons/iconsprite/*.svg'])
 		.pipe(svgSprite({
 			mode: {
 				stack: {

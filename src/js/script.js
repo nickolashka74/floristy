@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    $('.hamburger').click(function(event) {
+        $('.menu, .header__logo').toggleClass('active');
+    });
+
     $('.catalog__list').slick({
         arrows: false,
         dots: false,

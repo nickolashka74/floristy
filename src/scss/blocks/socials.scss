@@ -7,8 +7,8 @@
 
     &__item {
         display: block;
-        width: 25px;
-        height: 25px;
+        width: 26px;
+        height: 26px;
 
         &:hover {
             .socials__icon {
@@ -26,7 +26,29 @@
             .socials__border {
                 background-color: $white;
 
-                &--round{
+                &--round {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &--menu {
+            &:hover {
+                .socials__icon--menu {
+                    fill: $white;
+    
+                    &-inst {
+                        stroke: $white;
+                    }
+    
+                    &-union {
+                        fill: none;
+                        opacity: 1;
+                    }
+                }
+    
+                .socials__border--menu {
+                    border-color: $white;
                     background-color: transparent;
                 }
             }
@@ -40,10 +62,14 @@
         border: 1px solid $white;
         border-radius: 4px;
         background-color: transparent;
-        transition: background-color .5s;
+        transition: all .5s;
 
         &--round {
             border: none;
+        }
+
+        &--menu {
+            border-color: rgba($color: $white, $alpha: .5)
         }
     }
 
@@ -53,7 +79,7 @@
         right: 50%;
         transform: translate(50%, -50%);
         fill: $white;
-        transition: fill .5s;
+        transition: all .5s;
 
         &--inst {
             width: 14px;
@@ -62,7 +88,6 @@
             top: 3px;
             right: 3px;
             transform: none;
-            transition: stroke .5s;
         }
 
         &--fb {
@@ -85,6 +110,19 @@
             width: 25px;
             height: 25px;
             fill: none;
+        }
+
+        &--menu {
+            fill: rgba($color: $white, $alpha: .5);
+
+            &-inst {
+                stroke: rgba($color: $white, $alpha: .5);
+            }
+
+            &-union {
+                fill: none;
+                opacity: .5;
+            }
         }
     }
 }
