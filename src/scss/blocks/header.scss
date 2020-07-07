@@ -4,21 +4,39 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 144px;
+        height: 134px;
     }
 
     &__logo {
         position: absolute;
-        top: 87px;
+        bottom: 0;
         left: 96px;
         z-index: 5;
+        display: block;
         transform: translateX(0);
         transition: all .5s;
 
         &.active {
-            top: 95px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        &__body {
+            height: 88px;
+        }
+
+        &__logo {
+            bottom: 0;
+            left: 50px;
+
+            &.active {
+                bottom: -74px;
+            }
         }
     }
 }

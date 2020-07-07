@@ -102,3 +102,31 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slick-dots li {
+    display: inline-block;
+    width: 62px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    cursor: pointer;
+
+    & + li {
+        margin-left: 12px;
+    }
+}
+
+.slick-dots li.slick-active {
+    background-color: $white;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+}

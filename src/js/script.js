@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('.hamburger').click(function(event) {
-        $('.menu, .header__logo').toggleClass('active');
+        $('.menu, .header__logo, .hamburger, .main__socials').toggleClass('active');
     });
 
     $('.catalog__list').slick({

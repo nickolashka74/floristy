@@ -1,11 +1,21 @@
 .hamburger {
     position: absolute;
-    top: 106px;
+    bottom: 0;
     right: 96px;
     z-index: 5;
     width: 98px;
     height: 22px;
+    overflow: hidden;
     cursor: pointer;
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        right: 75px;
+        width: 23px;
+        height: 22px;
+        transition: all .5s;
+    }
 
     &__cross {
         position: absolute;
@@ -15,6 +25,7 @@
         width: 23px;
         height: 1px;
         background-color: #fff;
+        transition: all .5s;
 
         &::after {
             position: absolute;
@@ -25,14 +36,92 @@
             height: 1px;
             content: '';
             background-color: #fff;
+            transition: all .5s;
         }
     }
 
     &__text {
         position: absolute;
         right: 0;
+        bottom: 0;
         font-size: 20px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
+        transition: all .5s .5s;
+    }
+
+    &.active {
+        .hamburger__inner {
+            right: 0;
+            transition: .5s .5s;
+        }
+
+        .hamburger__cross {
+            right: 0;
+            width: 28px;
+            transform: rotate(45deg) translateY(3px);
+            background-color: rgba($color: $white, $alpha: .5);
+            transition: all .5s .5s;
+
+            &::after {
+                right: 0;
+                width: 28px;
+                transform: rotate(-90deg) translateX(6px);
+                background-color: rgba($color: $white, $alpha: .5);
+                transition: all .5s .5s;
+            }
+        }
+
+        .hamburger__text {
+            bottom: -100%;
+            transition: all .5s;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        width: 35px;
+        height: 35px;
+        right: 50px;
+        bottom: 15px;
+
+        &__inner {
+            width: 35px;
+            height: 35px;
+            right: 0;
+        }
+
+        &__text {
+            display: none;
+        }
+
+        &__cross {
+            width: 35px;
+            top: 13px;
+
+            &::after {
+                width: 35px;
+                top: 10px;
+            }
+        }
+
+        &.active {
+            .hamburger__inner {
+                transition: all .5s;
+            }
+
+            .hamburger__cross {
+                width: 21px;
+                transform: rotate(45deg) translate(7px, -2px);
+                transition: all .5s;
+
+                &::after {
+                    width: 21px;
+                    transform: rotate(-90deg) translateX(10px);
+                    transition: all .5s;
+                }
+            }
+        }
     }
 }
