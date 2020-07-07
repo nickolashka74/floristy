@@ -84,7 +84,7 @@
         width: 35px;
         height: 35px;
         right: 50px;
-        bottom: 15px;
+        bottom: 25px;
 
         &__inner {
             width: 35px;
@@ -107,6 +107,8 @@
         }
 
         &.active {
+            right: 40px;
+
             .hamburger__inner {
                 transition: all .5s;
             }
