@@ -67,11 +67,30 @@
         }
 
         &__descr {
-            margin-top: 40px;
+            margin: 40px 0 0 0;
         }
 
         &__btn {
-            margin-top: 15px;
+            margin: 15px 0 0 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .promo {
+        padding: 100px 16px 100px;
+
+        &__content {
+            margin: 25px 0 0 0;
+            text-align: left;
+        }
+
+        &__descr {
+            margin: 20px 0 0 0;
+        }
+
+        &__btn {
+            margin: 40px 0 0 0;
         }
     }
 }
