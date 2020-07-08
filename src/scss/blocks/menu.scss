@@ -9,17 +9,19 @@
     transition: right .5s;
 
     &__list {
-        margin: 344px auto 210px;
+        margin: 334px auto 200px;
         max-width: 440px;
+        width: min-content;
         text-align: center;
     }
 
     &__item + &__item {
-        margin-top: 75px;
+        margin-top: 55px;
     }
 
     &__link {
         display: block;
+        padding: 10px;
         @include adaptiv(35, 15);
         letter-spacing: 0.09em;
         text-transform: uppercase;
@@ -45,6 +47,36 @@
 
         .menu__socials {
             opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .menu {
+        &__list {
+            margin: 300px auto 150px;
+            max-width: 310px;
+        }
+
+        &__item + &__item {
+            margin-top: 50px;
+        }
+
+        &__socials {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .menu {
+        &__list {
+            margin: 120px auto 60px;
+            max-width: 210px;
+        }
+
+        &__item + &__item {
+            margin-top: 30px;
         }
     }
 }

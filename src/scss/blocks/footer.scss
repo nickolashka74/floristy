@@ -41,3 +41,21 @@
         margin: 30px auto 0;
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 21px 40px;
+
+        &__menu {
+            flex-direction: column;
+        }
+
+        &__item {
+            margin: 20px 0 0 0;
+        }
+
+        &__socials {
+            margin: 40px auto 0;
+        }
+    }
+}

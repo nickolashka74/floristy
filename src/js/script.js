@@ -14,7 +14,23 @@ $(document).ready(function() {
                 breakpoint: 1400,
                 settings: {
                     slidesToShow: 3,
-                    dots: true
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 993,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
                 }
             }
         ]

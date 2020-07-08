@@ -45,30 +45,33 @@
 
     &__element {
         position: relative;
+        display: block;
         margin: 157px auto 0;
         width: 36px;
         height: 56px;
         border: 0.7px solid #FFFFFF;
         border-radius: 22px;
-        cursor: pointer;
 
-        &::before {
-            position: absolute;
-            top: 9px;
-            left: 50%;
-            width: 1px;
-            height: 9px;
-            transform: translateX(-50%);
-            transition: top .5s;
-            content: '';
-            background-color: $white;
-        }
-
-        &:hover {
-            &::before {
-                top: 19px;
+        @media (min-width: 993px) {
+            &:hover {
+                .main__subelement {
+                    top: 19px;
+                }
             }
         }
+    }
+
+    &__subelement {
+        position: absolute;
+        top: 9px;
+        left: 50%;
+        display: block;
+        width: 1px;
+        height: 9px;
+        transform: translateX(-50%);
+        content: '';
+        background-color: $white;
+        transition: all .5s;
     }
 
     &__link {
@@ -102,6 +105,91 @@
             &::after {
                 right: -10px;
             }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        padding: 331px 0 55px 0;
+        background-image: url('../img/main-tablet-bg.jpg');
+
+        &::after {
+            display: none;
+        }
+
+        &__title {
+            max-width: 540px;
+        }
+
+        &__socials {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            margin: 211px auto 35px;
+        }
+
+        &__element {
+            margin: 0 auto;
+            width: 29px;
+            height: 29px;
+            border: none;
+            border-radius: none;
+        }
+
+        &__subelement {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1px;
+            height: 100%;
+            transform: translateX(-50%);
+            content: '';
+            background-color: $white;
+
+            &::before,
+            &::after {
+                position: absolute;
+                bottom: 0;
+                display: block;
+                width: 1px;
+                height: 11px;
+                content: '';
+                background-color: $white;
+            }
+
+            &::before {
+                right: -2px;
+                transform: rotate(45deg) translateX(3px);
+            }
+
+            &::after {
+                left: -1px;
+                transform: rotate(-45deg) translateX(-3px);
+            }
+        }
+
+        &__link {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .main {
+        padding: 167px 30px 40px;
+        background-image: url('../img/main-phone-bg.jpg');
+
+        &__title {
+            max-width: 340px;
+        }
+
+        &__btn {
+            margin: 35px 0 0 0;
+        }
+
+        &__socials {
+            margin: 70px auto 30px;
         }
     }
 }

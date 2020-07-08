@@ -1,5 +1,5 @@
 .catalog {
-    padding: 170px 40px 85px;
+    padding: 170px 40px 0;
 
     &__title {
         padding-bottom: 22px;
@@ -17,12 +17,25 @@
 
     &__list {
         max-width: 1560px;
-        // margin: -115px auto 0;
         margin: -7% auto 0;
         display: block;
 
         .slick-list {
             padding: 0 4px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .catalog {
+        padding: 100px 40px 0;
+
+        &__subtitle {
+            display: none;
+        }
+
+        &__list {
+            margin: 30px auto 0;
         }
     }
 }
