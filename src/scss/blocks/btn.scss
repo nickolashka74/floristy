@@ -3,19 +3,37 @@
     padding: 19px 34px 16px;
     border: 1px solid $white;
     color: $white;
-    background-color: transparent;
+    background-color: rgba($color: $main-bg, $alpha: .4);
+    font-family: Forum, sans-serif;
     font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     transition: all .5s;
 
-    &:hover {
-        color: $black;
-        background-color: $white;
+    @media (min-width: 993px) {
+        &:hover {
+            background-color: $white;
+            color: $black;
+        }
     }
 
     &--item {
         color: #010001;
-        background-color: #fff;
+        background-color: $white;
+    }
+
+    &--promo {
+        padding: 17px 30px 15px;
+        border-color: #010001;
+        font-size: 11px;
+        background-color: #010001;
+
+        @media (max-width: 992px) {
+            border-color: $white;
+        }
+    }
+
+    &--works {
+        padding: 19px 30px 16px;
     }
 }

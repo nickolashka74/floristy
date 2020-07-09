@@ -130,6 +130,12 @@
 
 @media (max-width: 576px) {
     .hamburger {
-        bottom: 15px;
+        right: 25px;
+        bottom: 14px;
+
+        &.active {
+            right: 20px;
+            bottom: 10px;
+        }
     }
 }

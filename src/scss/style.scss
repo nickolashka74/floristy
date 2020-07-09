@@ -7,13 +7,17 @@ body {
     font-family: Forum, sans-serif;
     font-weight: 400;
     color: $white;
+
+    &.lock {
+        overflow: hidden;
+    }
 }
 
 .container {
     max-width: 1920px;
     margin: 0 auto;
-    overflow: hidden;
     background-color: $main-bg;
+    overflow: hidden;
 }
 
 //Libs
@@ -30,4 +34,5 @@ body {
 @import "blocks/title";
 @import "blocks/item";
 @import "blocks/promo";
+@import "blocks/works";
 @import "blocks/footer";

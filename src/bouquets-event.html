@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Букеты на мероприятия</title>
+</head>
+<body>
+    <div class="container">
+        <section class="works">
+            @@include('html/_header.html')
+
+            <div class="works__wrapper">
+                <div class="works__image image__slider">
+                    <div class="image__item" style="background: url('../img/bouquets-event/image-1.jpg') center center / cover no-repeat">
+                        <div class="image__border"></div>
+                    </div>
+                </div>
+                <div class="works__content">
+                    <div class="works__inner">
+                        <h1 class="works__title">букеты на мероприятия</h1>
+                        <p class="works__text">У нас есть огромное разноообразие букетов на любое событие. Вы сможете приобрести как нежный букет, так и яркий, а также мужские, круглые, вертикалье, веерообразные, букеты-зонтики, букеты в вегетативной технике и много  других экзотических видов.</p>
+                        <button class="btn btn--works works__btn">заказать</button>
+                        <div class="works__thumbnail thumbnail__slider">
+                            <div class="thumbnail__item">
+                                <img src="" alt="thumbnail-1" class="thumbnail__img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @@include('html/_footer.html', {
+            "class": "footer works__footer"
+        })
+    </div>
+
+    @@include('html/_script.html')
+</body>
+</html>

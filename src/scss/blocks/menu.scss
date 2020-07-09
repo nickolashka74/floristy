@@ -4,9 +4,14 @@
     right: -100%;
     z-index: 4;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     background-color: $main-bg;
     transition: right .5s;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        background-color: $main-bg;
+    }
 
     &__list {
         margin: 334px auto 200px;
@@ -35,11 +40,11 @@
     }
 
     &__socials {
-        position: absolute;
+        position: fixed;
         left: 95px;
         bottom: 115px;
         opacity: 0;
-        transition: all .5s .5s;
+        transition: all .5s;
     }
 
     &.active {
@@ -47,6 +52,7 @@
 
         .menu__socials {
             opacity: 1;
+            transition: all .5s .5s;
         }
     }
 }
