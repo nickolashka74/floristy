@@ -1,34 +1,32 @@
 <header class="header">
-    <div class="header__wrapper">
-        <div class="header__body">
-            <a href="index.html" class="header__logo">
-                <img src="img/icons/icons.svg#logo" alt="#" class="logo__img">
-            </a>
-            <div class="hamburger header__hamburger">
-                <div class="hamburger__inner">
-                    <span class="hamburger__cross"></span>
-                </div>
-                <span class="hamburger__text">меню</span>
+    <div class="header__body">
+        <a href="index.html" class="header__logo">
+            <img src="img/icons/icons.svg#logo" alt="#" class="logo__img">
+        </a>
+        <div class="hamburger header__hamburger">
+            <div class="hamburger__inner">
+                <span class="hamburger__cross"></span>
             </div>
+            <span class="hamburger__text">меню</span>
         </div>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">свадебная флористика</a>
+                </li>
+                <li class="menu__item">
+                    <a href="bouquets-event.html" class="menu__link">букеты на любые мероприятия</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">композиции</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">оформление мероприятий</a>
+                </li>
+            </ul>
+            <div class="socials menu__socials">
+                @@include('_socials-menu.html')
+            </div>
+        </nav>
     </div>
-    <nav class="menu">
-        <ul class="menu__list">
-            <li class="menu__item">
-                <a href="#" class="menu__link">свадебная флористика</a>
-            </li>
-            <li class="menu__item">
-                <a href="bouquets-event.html" class="menu__link">букеты на любые мероприятия</a>
-            </li>
-            <li class="menu__item">
-                <a href="#" class="menu__link">композиции</a>
-            </li>
-            <li class="menu__item">
-                <a href="#" class="menu__link">оформление мероприятий</a>
-            </li>
-        </ul>
-        <div class="socials menu__socials">
-            @@include('_socials-menu.html')
-        </div>
-    </nav>
 </header>

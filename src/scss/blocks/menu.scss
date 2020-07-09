@@ -9,10 +9,6 @@
     transition: right .5s;
     overflow: auto;
 
-    &::-webkit-scrollbar {
-        background-color: $main-bg;
-    }
-
     &__list {
         margin: 334px auto 200px;
         max-width: 440px;
