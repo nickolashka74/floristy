@@ -28,3 +28,24 @@
 		font-size: #{$pcSize}px;
 	}
 }
+
+/* адаптивный font-size от 320px до max-width с учётом контрольных точек. Допустим для PC - 50px, tablet - 40px, phone - 20px */
+@mixin adaptiv-specific($pcSize, $tabletSize, $mobSize, $maxWidth1, $maxWidth2 ) {
+	$addSize1: $pcSize - $tabletSize;
+	$addSize2: $tabletSize - $mobSize;
+	$minWidth1: $maxWidth1 + 1;
+	$minWidth2: $maxWidth2 + 1;
+	$width1: $maxWidth1 - $maxWidth2;
+	$width2: $maxWidth2 - 320;
+	@media (max-width: #{$maxWidth2}px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize2} * ((100vw - 320px) / #{$width2}));
+	}
+
+	@media (min-width: #{$minWidth2}px) and (max-width: #{$maxWidth1}px) {
+		font-size: calc(#{$tabletSize + px} + #{$addSize1} * ((100vw - #{$maxWidth2 + px}) / #{$width1}));
+	}
+
+	@media (min-width: #{$minWidth1}px) {
+		font-size: #{$pcSize}px;
+	}
+}

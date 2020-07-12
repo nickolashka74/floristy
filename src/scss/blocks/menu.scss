@@ -36,7 +36,7 @@
     }
 
     &__socials {
-        position: fixed;
+        position: absolute;
         left: 95px;
         bottom: 115px;
         opacity: 0;
@@ -47,6 +47,7 @@
         right: 0;
 
         .menu__socials {
+            position: fixed;
             opacity: 1;
             transition: all .5s .5s;
         }

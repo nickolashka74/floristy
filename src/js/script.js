@@ -36,4 +36,44 @@ $(document).ready(function() {
             }
         ]
     });
+
+    $('.image__slider').slick({
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        asNavFor: '.thumbnail__slider',
+        fade: true,
+        infinite: false,
+    });
+
+    $('.thumbnail__slider').slick({
+        arrows: true,
+        dots: false,
+        slidesToShow: 4,
+        asNavFor: '.image__slider',
+        focusOnSelect: true,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 993,
+                settings: {
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 4,
+                    focusOnSelect: true,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 577,
+                settings: {
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 4,
+                    focusOnSelect: true,
+                    infinite: true,
+                }
+            }
+        ]
+    });
 });

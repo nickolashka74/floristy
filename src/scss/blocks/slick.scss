@@ -106,26 +106,98 @@
 .slick-dots {
     display: flex;
     justify-content: center;
-}
 
-.slick-dots li {
-    display: inline-block;
-    width: 62px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    cursor: pointer;
+    @media (max-width: 992px) {
+        margin: 20px 0 0 0;
+    }
 
-    & + li {
-        margin-left: 12px;
+    @media (max-width: 576px) {
+        margin: 10px 0 0 0;
     }
 }
 
-.slick-dots li.slick-active {
-    background-color: $white;
+.slick-dots {
+    li {
+        display: inline-block;
+        width: 62px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        cursor: pointer;
+
+        & + li {
+            margin-left: 12px;
+        }
+
+        &.slick-active {
+            background-color: $white;
+        }
+
+        button {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            outline: none;
+
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+    }
 }
 
-.slick-dots li button {
-    font-size: 0;
-    line-height: 0;
+.slick-prev,
+.slick-next {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: 46px;
+    width: 46px;
+    line-height: 0px;
+    font-size: 0px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    color: transparent;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
+    outline: none;
+    opacity: 1;
+    transition: all .5s;
+
+    &:hover, &:focus {
+        outline: none;
+        color: transparent;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    &.slick-disabled {
+        opacity: 0;
+    }
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 6px;
+        height: 10px;
+        content: '';
+        background: url('../img/icons/arrow-right.png') center center no-repeat;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.slick-prev {
+    left: -15px;
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+}
+
+.slick-next {
+    right: -17px;
 }
