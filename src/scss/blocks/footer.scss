@@ -44,7 +44,11 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 20px 21px 40px;
+        padding: 0 21px 40px;
+
+        &__wrapper {
+            padding: 20px 0 0 0;
+        }
 
         &__menu {
             flex-direction: column;
@@ -62,7 +66,11 @@
 
 @media (max-width: 576px) {
     .footer {
-        padding: 15px 16px 30px;
+        padding: 0 16px 30px;
+
+        &__wrapper {
+            padding: 15px 0 0 0;
+        }
 
         &__item {
             margin: 15px 0 0 0;

@@ -37,6 +37,7 @@
 
     &.active {
         &::before {
+            height: 100%;
             background-color: $main-bg;
             transition: background-color .5s .5s;
         }
@@ -78,9 +79,13 @@
     .header {
         height: 64px;
 
-        &__body {
-            height: 64px;
+        &::before {
+            height: 100%;
             background-color: $main-bg;
+        }
+
+        &__body {
+            height: 100%;
         }
 
         &__logo {

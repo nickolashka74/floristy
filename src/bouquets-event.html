@@ -9,7 +9,9 @@
 <body>
     <div class="container">
         <section class="works">
-            @@include('html/_header.html')
+            @@include('html/_header.html', {
+                "class": "header works__header"
+            })
 
             <div class="works__wrapper">
                 <div class="works__image image__slider">

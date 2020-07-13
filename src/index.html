@@ -9,7 +9,9 @@
 	<body>
 		<div class="container">
 			<section class="main">
-				@@include('html/_header.html')
+				@@include('html/_header.html', {
+					"class": "header"
+				})
 	
 				<div class="main__wrapper">
 					<h1 class="main__title">флористика с душой</h1>
@@ -29,27 +31,27 @@
 			<section class="catalog">
 				<h2 class="title catalog__title">Каталог услуг</h2>
 				<div class="catalog__subtitle">каталог услуг</div>
-					<div class="catalog__list">
-						@@include('html/_item.html', {
-							"url": "../img/catalog/image-1.jpg",
-							"number": "01",
-							"title": "букет невесты и свадебное оформление"
-						})
-						@@include('html/_item.html', {
-							"url": "../img/catalog/image-2.jpg",
-							"number": "02",
-							"title": "букеты на торжества"
-						})
-						@@include('html/_item.html', {
-							"url": "../img/catalog/image-3.jpg",
-							"number": "03",
-							"title": "композиции"
-						})
-						@@include('html/_item.html', {
-							"url": "../img/catalog/image-4.jpg",
-							"number": "04",
-							"title": "оформление мероприятий"
-						})
+				<div class="catalog__list">
+					@@include('html/_item.html', {
+						"url": "../img/catalog/image-1.jpg",
+						"number": "01",
+						"title": "букет невесты и свадебное оформление"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/image-2.jpg",
+						"number": "02",
+						"title": "букеты на торжества"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/image-3.jpg",
+						"number": "03",
+						"title": "композиции"
+					})
+					@@include('html/_item.html', {
+						"url": "../img/catalog/image-4.jpg",
+						"number": "04",
+						"title": "оформление мероприятий"
+					})
 				</div>
 			</section>
 

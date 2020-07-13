@@ -44,6 +44,18 @@ $(document).ready(function() {
         asNavFor: '.thumbnail__slider',
         fade: true,
         infinite: false,
+        responsive: [
+            {
+                breakpoint: 993,
+                settings: {
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 1,
+                    fade: true,
+                    infinite: false,
+                }
+            }
+        ]
     });
 
     $('.thumbnail__slider').slick({
@@ -61,17 +73,19 @@ $(document).ready(function() {
                     dots: false,
                     slidesToShow: 4,
                     focusOnSelect: true,
-                    infinite: true,
+                    infinite: false,
                 }
             },
             {
-                breakpoint: 577,
+                breakpoint: 481,
                 settings: {
                     arrows: false,
                     dots: false,
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                     focusOnSelect: true,
-                    infinite: true,
+                    infinite: false,
+                    centerMode: true,
+                    centerPadding: '15px',
                 }
             }
         ]
