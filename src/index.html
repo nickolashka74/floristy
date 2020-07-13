@@ -24,33 +24,37 @@
 					<a href="#" class="main__element">
 						<span class="main__subelement"></span>
 					</a>
-					<a href="#" class="main__link">смотреть каталог</a>
+					<a href="#catalog" class="main__link">смотреть каталог</a>
 				</div>
 			</section>
 
-			<section class="catalog">
+			<section class="catalog" id="catalog">
 				<h2 class="title catalog__title">Каталог услуг</h2>
 				<div class="catalog__subtitle">каталог услуг</div>
 				<div class="catalog__list">
 					@@include('html/_item.html', {
-						"url": "../img/catalog/image-1.jpg",
+						"src": "../img/catalog/image-1.jpg",
 						"number": "01",
-						"title": "букет невесты и свадебное оформление"
+						"title": "букет невесты и свадебное оформление",
+						"url": "wedding-decoration.html",
 					})
 					@@include('html/_item.html', {
-						"url": "../img/catalog/image-2.jpg",
+						"src": "../img/catalog/image-2.jpg",
 						"number": "02",
-						"title": "букеты на торжества"
+						"title": "букеты на торжества",
+						"url": "bouquets-event.html",
 					})
 					@@include('html/_item.html', {
-						"url": "../img/catalog/image-3.jpg",
+						"src": "../img/catalog/image-3.jpg",
 						"number": "03",
-						"title": "композиции"
+						"title": "композиции",
+						"url": "compositions.html",
 					})
 					@@include('html/_item.html', {
-						"url": "../img/catalog/image-4.jpg",
+						"src": "../img/catalog/image-4.jpg",
 						"number": "04",
-						"title": "оформление мероприятий"
+						"title": "оформление мероприятий",
+						"url": "event-decoration.html",
 					})
 				</div>
 			</section>
