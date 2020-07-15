@@ -90,4 +90,27 @@ $(document).ready(function() {
             }
         ]
     });
+
+    $('.modal__open').click(function() {
+        $('.modal').fadeIn();
+		return false;
+	});	
+	
+	$('.modal__close').click(function() {
+		$(this).parents('.modal').fadeOut();
+		return false;
+	});		
+ 
+	$(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			e.stopPropagation();
+			$('.modal').fadeOut();
+		}
+	});
+	
+	$('.modal').click(function(e) {
+		if ($(e.target).closest('.modal__body').length == 0) {
+			$(this).fadeOut();					
+		}
+	});
 });
