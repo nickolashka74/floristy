@@ -227,13 +227,6 @@
 
 @media (max-width: 768px) {
     .works {
-        &__header {
-            &::before {
-                height: 112px;
-                background-color: $main-bg;
-            }
-        }
-
         &__inner {
             flex-basis: auto;
         }
