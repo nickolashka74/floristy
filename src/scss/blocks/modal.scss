@@ -68,6 +68,17 @@
         letter-spacing: -0.01em;
         color: $white;
         background-color: $main-bg;
+
+        &::placeholder {
+            color: $white;
+            opacity: 1;
+        }
+
+        &:focus {
+            &::placeholder {
+                color: transparent;
+            }
+        }
     }
 
     &__input + &__input {
