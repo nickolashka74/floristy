@@ -182,10 +182,8 @@
         top: 50%;
         left: 50%;
         display: block;
-        width: 6px;
-        height: 10px;
+        @include sprite($arrow-right);
         content: '';
-        background: url('../img/icons/arrow-right.png') center center no-repeat;
         transform: translate(-50%, -50%);
     }
 }

@@ -90,12 +90,8 @@
             position: absolute;
             right: 0;
             top: 50%;
-            display: block;
-            width: 21px;
-            height: 21px;
-            background-image: url('../img/icons/arrow-down.png');
-            background-repeat: no-repeat;
-            background-position: center;
+            display: inline-block;
+            @include sprite($arrow-down);
             content: '';
             transform: rotate(-90deg) translateX(50%);
             transition: right .5s;

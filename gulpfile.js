@@ -44,7 +44,9 @@ let { src, dest } = require('gulp'),
 	symbol = require('gulp-svg-sprite'),
 	ttf2woff = require('gulp-ttf2woff'),
 	ttf2woff2 = require('gulp-ttf2woff2'),
-	fonter = require('gulp-fonter');
+	fonter = require('gulp-fonter'),
+	pngSprite = require('gulp.spritesmith');
+	merge = require('merge-stream');
 
 function browserSync(params) {
 	browsersync.init({
@@ -153,7 +155,7 @@ gulp.task('symbol', function () {
 })
 
 function svg () {
-	return src([source_folder + '/icons/iconsprite/*.svg'])
+	return src([source_folder + '/icons/sprite-svg/*.svg'])
 		.pipe(svgSprite({
 			mode: {
 				stack: {
@@ -167,6 +169,27 @@ function svg () {
 		}
 		))
 		.pipe(dest(path.build.img))
+};
+
+function png () {
+	let spriteData = src([source_folder + '/icons/sprite-png/*.png'])
+	.pipe(pngSprite({
+		imgName: 'sprite.png',
+		imgPath: '../img/icons/sprite.png',
+		cssName: 'sprite.scss',
+		cssFormat: 'scss'
+	}
+	))
+	let imgStream = spriteData.img
+    .pipe(gulp.dest(path.build.img + '/icons/'));
+  
+  	// Pipe CSS stream onto disk
+  	let cssStream = spriteData.css
+    .pipe(gulp.dest(source_folder + '/scss/'));
+  
+  	// Return a merged stream to handle both `end` events
+  	return merge(imgStream, cssStream);
+	// .pipe(dest(path.build.img + '/icons/'))
 };
 
 function fontsStyle(params) {
@@ -204,13 +227,14 @@ function clean(params) {
 	return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, svg, fonts), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, svg, png, fonts), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.svg = svg;
+exports.png = png;
 exports.js = js;
 exports.css = css;
 exports.html = html;
