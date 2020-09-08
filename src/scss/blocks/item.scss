@@ -96,6 +96,10 @@
         bottom: -75px;
         transition: bottom .5s;
         text-align: left;
+
+        @media (max-width: 992px) {
+            bottom: 0;
+        }
     }
 
     &__title {
